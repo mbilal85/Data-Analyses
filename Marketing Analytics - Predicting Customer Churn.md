@@ -1,10 +1,12 @@
 ### Churn is when a customer stops doing business or ends a relationship with a company. 
 
-It’s a common problem across a variety of industries, from telecommunications to cable TV to SaaS, and a company that can predict churn can take proactive action to retain valuable customers and get ahead of the competition. 
+###### Churn is a common problem across a variety of industries, from telecommunications to cable TV to SaaS, and a company that can predict churn can take proactive action to retain valuable customers and get ahead of the competition. 
 
-This project will provide a roadmap to create a customer churn models. 
+###### This project will provide a roadmap to create a customer churn model. 
 
-Various techniques will be used to explore and visualize the data, preparing it for modeling, making predictions using machine learning, and important, actionable insights to stakeholders will be communicated. Pandas library is used for data analysis and the scikit-learn library for machine learning.
+###### Various techniques will be used to explore and visualize the data, preparing it for modeling, making predictions using machine learning, and important, actionable insights to stakeholders will be communicated. Pandas library is used for data analysis and the scikit-learn library for machine learning. Matplotlib and Seaborn will be used to visualize the data. 
+
+###### Furthermore, K-fold cross validation and confusion matrix are used to evaluate and choose the best model. 
 
 ###### First of all the structure of our customer dataset, which has been pre-loaded into a DataFrame called telco is checked. Being able to check the structure of the data is a fundamental step in the churn modeling process and is often overlooked.
 
@@ -411,7 +413,7 @@ plt.show()
 
 ###### It looks like customers who do churn end up leaving more customer service calls, unless these customers also have an international plan, in which case they leave fewer customer service calls. This type of information is really useful in better understanding the drivers of churn. It's now time to learn about how to preprocess the data prior to modeling.
 
-###### Identifying features to convert
+### Identifying features to convert
 ###### It is preferable to have features like 'Churn' encoded as 0 and 1 instead of no and yes, so that they can be fed into machine learning algorithms that only accept numeric values.
 
 ###### Besides 'Churn', other features that are of type object can be converted into 0s and 1s. In the following codes, different data types of telco will be explored to identify the ones that are of type object.
@@ -669,7 +671,7 @@ print(telco_scaled_df.describe())
 
 
 ###### Dropping unnecessary features
-###### Some features such as 'Area_Code' and 'Phone' are not useful when it comes to predicting customer churn, and they need to be dropped prior to modeling. The easiest way to do so in Python is using the .drop() method of pandas DataFrames. 
+###### Some features such as 'Area_Code' and 'Phone' are not useful when it comes to predicting customer churn, and they need to be dropped prior to modeling. The easiest way to do so in Python is using the .drop() method of pandas DataFrame. 
 
 
 ```python
@@ -1077,8 +1079,10 @@ X.dtypes
 ```python
 # Splitting the dataset into the Training set and Test set
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 43)
 ```
+
+###### Test set is kept to 0.25 to get a good representation of all the variables. 
 
 
 ```python
@@ -1095,7 +1099,7 @@ X_test = sc.transform(X_test)
 from sklearn.linear_model import LogisticRegression
 
 # Instantiate the classifier
-clf = LogisticRegression(random_state = 0)
+clf = LogisticRegression(random_state = 43)
 
 
 # Fitting the classifier
@@ -1112,7 +1116,7 @@ clf.fit(X_train, y_train)
     LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
                        intercept_scaling=1, l1_ratio=None, max_iter=100,
                        multi_class='warn', n_jobs=None, penalty='l2',
-                       random_state=0, solver='warn', tol=0.0001, verbose=0,
+                       random_state=43, solver='warn', tol=0.0001, verbose=0,
                        warm_start=False)
 
 
@@ -1123,14 +1127,7 @@ clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 ```
 
-
-```python
-# Compute accuracy
-print(clf.score(X_test, y_test))
-```
-
-    0.8717026378896883
-
+###### In classification problems accuracy is the main measure to evaluate a model. However, in the telco dataset there is an imbalance in the target variable, hence, measuring only the accuracy would not be sufficient. Therefore, confusion matrix (precision and recall) is also used to check models' performance and in the end k-fold cross validation is used to select the best model. 
 
 
 ```python
@@ -1140,8 +1137,57 @@ cm = confusion_matrix(y_test, y_pred)
 print(cm)
 ```
 
-    [[707  12]
-     [ 95  20]]
+    [[707  24]
+     [ 81  22]]
+
+
+### Evaluating model's performance
+
+
+```python
+# Compute accuracy
+print(clf.score(X_test, y_test))
+
+# Computing precision and recall
+# Importing precision_score
+from sklearn.metrics import precision_score
+
+# Printing the precision of the classifier.
+# Printing the precision
+print(precision_score(y_test, y_pred))
+
+# Importing recall_score
+from sklearn.metrics import recall_score
+
+# Printing the recall
+print(recall_score(y_test, y_pred))
+
+# Importing F1_score
+from sklearn.metrics import f1_score
+
+# Printing the F1 score
+print(f1_score(y_pred, y_test))
+
+# Applying k-Fold Cross Validation
+from sklearn.model_selection import cross_val_score
+accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, cv = 10)
+accuracies.mean()
+accuracies.std()
+
+
+```
+
+    0.8741007194244604
+    0.4782608695652174
+    0.21359223300970873
+    0.29530201342281875
+
+
+
+
+
+    0.02155168060397745
+
 
 
 ###### Based on the model we can predict whether a new customer will Churn or not. 
@@ -1193,7 +1239,7 @@ classifier = DecisionTreeClassifier()
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 43)
 
 # Fitting the classifier
 classifier.fit(X_train, y_train)
@@ -1229,17 +1275,55 @@ print(confusion_matrix(y_test, y_pred))
 
 ```
 
-    [[707  12]
-     [ 95  20]]
+    [[707  24]
+     [ 81  22]]
 
 
 
 ```python
 # Computing accuracy
 print(classifier.score(X_test, y_test))
+
+# Computing precision and recall
+# Importing precision_score
+from sklearn.metrics import precision_score
+
+# Printing the precision of the classifier.
+# Printing the precision
+print(precision_score(y_test, y_pred))
+
+# Importing recall_score
+from sklearn.metrics import recall_score
+
+# Printing the recall
+print(recall_score(y_test, y_pred))
+
+# Importing F1_score
+from sklearn.metrics import f1_score
+
+# Printing the F1 score
+print(f1_score(y_pred, y_test))
+
+# Applying k-Fold Cross Validation
+from sklearn.model_selection import cross_val_score
+accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, cv = 10)
+accuracies.mean()
+accuracies.std()
+
+
 ```
 
-    0.9136690647482014
+    0.9232613908872902
+    0.4782608695652174
+    0.21359223300970873
+    0.29530201342281875
+
+
+
+
+
+    0.021575083342185226
+
 
 
 ###### Applying Random Forest Classifier 
@@ -1267,8 +1351,8 @@ print(confusion_matrix(y_test, y_pred))
 
 ```
 
-    [[710   9]
-     [ 30  85]]
+    [[726   5]
+     [ 29  74]]
 
 
     /opt/anaconda3/lib/python3.7/site-packages/sklearn/ensemble/forest.py:245: FutureWarning: The default value of n_estimators will change from 10 in version 0.20 to 100 in 0.22.
@@ -1277,6 +1361,18 @@ print(confusion_matrix(y_test, y_pred))
 
 
 ```python
+# Predicting the label of new_customer
+print(classifier.predict(new_customer))
+```
+
+    [1]
+
+
+
+```python
+# Computing accuracy
+print(classifier.score(X_test, y_test))
+
 # Computing precision and recall
 # Importing precision_score
 from sklearn.metrics import precision_score
@@ -1285,23 +1381,57 @@ from sklearn.metrics import precision_score
 # Printing the precision
 print(precision_score(y_test, y_pred))
 
-```
-
-    0.9042553191489362
-
-
-
-```python
 # Importing recall_score
 from sklearn.metrics import recall_score
 
 # Printing the recall
 print(recall_score(y_test, y_pred))
 
+# Importing F1_score
+from sklearn.metrics import f1_score
+
+# Printing the F1 score
+print(f1_score(y_pred, y_test))
+
+# Applying k-Fold Cross Validation
+from sklearn.model_selection import cross_val_score
+accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, cv = 10)
+accuracies.mean()
+accuracies.std()
+
+
 ```
 
-    0.7391304347826086
+    0.9148681055155875
+    0.8686868686868687
+    0.7478260869565218
+    0.8037383177570094
 
+
+
+
+
+    0.016224133002749504
+
+
+
+
+```python
+# Applying k-Fold Cross Validation
+from sklearn.model_selection import cross_val_score
+accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, cv = 10)
+accuracies.mean()
+accuracies.std()
+```
+
+
+
+
+    0.02006304170675178
+
+
+
+###### Looking at the confusion matrix of the different models and k-fold Cross Validation scores, Random Forest Classifier stands out with the best scores. Higher precision and recall suggest that the model predicted the existing and churning customers better than other models. 
 
 ### ROC curve
 ###### An ROC curve for our random forest classifier is created. The first step is to calculate the predicted probabilities output by the classifier for each label using its .predict_proba() method. Then, we can use the roc_curve function from sklearn.metrics to compute the false positive rate and true positive rate, which can then be plotted using matplotlib.
@@ -1330,7 +1460,7 @@ plt.show()
 ```
 
 
-![png](output_75_0.png)
+![png](output_80_0.png)
 
 
 ### Area under the curve
@@ -1513,7 +1643,7 @@ plt.show()
 ```
 
 
-![png](output_88_0.png)
+![png](output_93_0.png)
 
 
 ### Improving the plot
@@ -1541,7 +1671,7 @@ plt.show()
 ```
 
 
-![png](output_90_0.png)
+![png](output_95_0.png)
 
 
 ###### The plot tells us that CustServ_Calls, Day_Mins and Day_Charge are the most important drivers of churn.
@@ -1713,7 +1843,7 @@ plt.show()
 ```
 
 
-![png](output_100_0.png)
+![png](output_105_0.png)
 
 
 
@@ -1748,7 +1878,7 @@ plt.show()
 
 
 
-![png](output_102_1.png)
+![png](output_107_1.png)
 
 
 ### Key points to retain customers

@@ -312,19 +312,19 @@ plt.show()
 ```
 
 
-![png](output_15_0.png)
+![output_15_0](https://user-images.githubusercontent.com/49030506/78165744-cc5ef100-7419-11ea-88b0-4e87fb4f7132.png)
 
 
 
-![png](output_15_1.png)
+![output_15_1](https://user-images.githubusercontent.com/49030506/78165746-ccf78780-7419-11ea-897c-acd461958293.png)
 
 
 
-![png](output_15_2.png)
+![output_15_2](https://user-images.githubusercontent.com/49030506/78165747-cd901e00-7419-11ea-9984-22553e463914.png)
 
 
 
-![png](output_15_3.png)
+![output_15_3](https://user-images.githubusercontent.com/49030506/78165748-cd901e00-7419-11ea-968b-fbd07d705bdf.png)
 
 
 ###### All of the above features appear to be well approximated by the normal distribution. If this were not the case, we would have to consider applying a feature transformation of some kind. 
@@ -350,7 +350,7 @@ plt.show()
 ```
 
 
-![png](output_19_0.png)
+![output_19_0](https://user-images.githubusercontent.com/49030506/78165749-cd901e00-7419-11ea-9a86-34d9259a0ee1.png)
 
 
 ###### There is a very noticeable difference here between churners and non-churners! Now, outliers from the box plot are removed in the next step.
@@ -368,7 +368,7 @@ plt.show()
 ```
 
 
-![png](output_21_0.png)
+![output_21_0](https://user-images.githubusercontent.com/49030506/78165751-ce28b480-7419-11ea-8d6f-a83f04c24525.png)
 
 
 ###### Adding a third variable to this plot - 'Vmail_Plan' - to visualize whether or not having a voice mail plan affects the number of customer service calls or churn.
@@ -388,7 +388,7 @@ plt.show()
 ```
 
 
-![png](output_23_0.png)
+![output_23_0](https://user-images.githubusercontent.com/49030506/78165752-ce28b480-7419-11ea-9f43-ed3cad2a803a.png)
 
 
 ###### Not much of a difference there. Updating the code so that the third variable is 'Intl_Plan' instead.
@@ -408,7 +408,7 @@ plt.show()
 ```
 
 
-![png](output_25_0.png)
+![output_25_0](https://user-images.githubusercontent.com/49030506/78165753-ce28b480-7419-11ea-87a5-e64e53e6cf52.png)
 
 
 ###### It looks like customers who do churn end up leaving more customer service calls, unless these customers also have an international plan, in which case they leave fewer customer service calls. This type of information is really useful in better understanding the drivers of churn. It's now time to learn about how to preprocess the data prior to modeling.
@@ -1460,7 +1460,7 @@ plt.show()
 ```
 
 
-![png](output_80_0.png)
+![output_80_0](https://user-images.githubusercontent.com/49030506/78165755-cec14b00-7419-11ea-9502-f827d98c4572.png)
 
 
 ### Area under the curve
@@ -1643,7 +1643,7 @@ plt.show()
 ```
 
 
-![png](output_93_0.png)
+![output_93_0](https://user-images.githubusercontent.com/49030506/78165756-cec14b00-7419-11ea-9072-e1a7373e9ddf.png)
 
 
 ### Improving the plot
@@ -1671,7 +1671,7 @@ plt.show()
 ```
 
 
-![png](output_95_0.png)
+![output_95_0](https://user-images.githubusercontent.com/49030506/78165757-cec14b00-7419-11ea-878a-08fe2e48b79e.png)
 
 
 ###### The plot tells us that CustServ_Calls, Day_Mins and Day_Charge are the most important drivers of churn.
@@ -1843,7 +1843,7 @@ plt.show()
 ```
 
 
-![png](output_105_0.png)
+![output_105_0](https://user-images.githubusercontent.com/49030506/78165758-cf59e180-7419-11ea-96ae-207856020fc9.png)
 
 
 
@@ -1878,7 +1878,8 @@ plt.show()
 
 
 
-![png](output_107_1.png)
+![output_107_1](https://user-images.githubusercontent.com/49030506/78165760-cf59e180-7419-11ea-8072-af1b79464796.png)
+
 
 
 ### Key points to retain customers

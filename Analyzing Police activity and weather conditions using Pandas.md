@@ -791,7 +791,7 @@ plt.show()
 ```
 
 
-![png](output_57_0.png)
+![output_57_0](https://user-images.githubusercontent.com/49030506/78163867-f06d0300-7416-11ea-8884-a7a893fe5cb5.png)
 
 
 ###### The arrest rate has a significant spike overnight, and then dips in the early morning hours.
@@ -857,7 +857,7 @@ plt.show()
 ```
 
 
-![png](output_62_0.png)
+![output_62_0](https://user-images.githubusercontent.com/49030506/78163868-f1059980-7416-11ea-80c3-f12b05b59264.png)
 
 
 ###### The rate of drug-related stops increased more than double over the course of 9 years.
@@ -909,7 +909,7 @@ plt.show()
 ```
 
 
-![png](output_66_0.png)
+![output_66_0](https://user-images.githubusercontent.com/49030506/78163869-f1059980-7416-11ea-801d-06431c2498de.png)
 
 
 ###### The rate of drug-related stops increased even though the search rate decreased.
@@ -982,7 +982,7 @@ plt.show()
 ```
 
 
-![png](output_73_0.png)
+![output_73_0](https://user-images.githubusercontent.com/49030506/78163870-f19e3000-7416-11ea-93c7-7d32469f0f31.png)
 
 
 
@@ -995,7 +995,7 @@ plt.show()
 ```
 
 
-![png](output_74_0.png)
+![output_74_0](https://user-images.githubusercontent.com/49030506/78163871-f19e3000-7416-11ea-8f97-405e4b8b022b.png)
 
 
 ###### The vast majority of traffic stops in Zone K1 are for speeding, and Zones K2 and K3 are remarkably similar to one another in terms of violations.
@@ -1080,7 +1080,7 @@ stop_length.sort_values().plot(kind = 'barh', color = 'blue')
 
 
 
-![png](output_84_1.png)
+![output_84_1](https://user-images.githubusercontent.com/49030506/78163872-f19e3000-7416-11ea-8e54-a2f2694346d4.png)
 
 
 ###### Time to incorporate weather data. 
@@ -1299,7 +1299,7 @@ weather[['TMIN', 'TAVG', 'TMAX']].plot(kind='box')
 
 
 
-![png](output_89_1.png)
+![output_89_1](https://user-images.githubusercontent.com/49030506/78163873-f19e3000-7416-11ea-824b-fc89d7e49cbe.png)
 
 
 ###### The temperature data looks good so far: the TAVG values are in between TMIN and TMAX, and the measurements and ranges seem reasonable.
@@ -1341,7 +1341,7 @@ weather.TDIFF.plot(kind='hist', bins=20)
 
 
 
-![png](output_93_1.png)
+![output_93_1](https://user-images.githubusercontent.com/49030506/78163874-f19e3000-7416-11ea-95cb-d4cee139a452.png)
 
 
 ###### The TDIFF column has no negative values and its distribution is approximately normal, both of which are signs that the data is trustworthy.
@@ -1388,7 +1388,7 @@ plt.show()
 ```
 
 
-![png](output_99_0.png)
+![output_99_0](https://user-images.githubusercontent.com/49030506/78163877-f236c680-7416-11ea-8561-dab8f013e588.png)
 
 
 ###### It looks like many days didn't have any bad weather conditions, and only a small portion of days had more than four bad weather conditions

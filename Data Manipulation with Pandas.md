@@ -1541,7 +1541,7 @@ plt.show()
 
 
 
-![png](output_92_1.png)
+![output_92_1](https://user-images.githubusercontent.com/49030506/78165088-cd435300-7418-11ea-8a84-36dd444af5b6.png)
 
 
 ###### It looks like small avocados were the most-purchased size, but large avocados were a close second.
@@ -1564,7 +1564,7 @@ plt.show()
 ```
 
 
-![png](output_95_0.png)
+![output_95_0](https://user-images.githubusercontent.com/49030506/78165089-cd435300-7418-11ea-9961-be637a29df90.png)
 
 
 ###### Line plots are great for visualizing something over time. Here, it looks like the number of avocados spikes around the same time each year.
@@ -1582,7 +1582,7 @@ plt.show()
 ```
 
 
-![png](output_98_0.png)
+![output_98_0](https://user-images.githubusercontent.com/49030506/78165090-cddbe980-7418-11ea-9c68-13a9822fe051.png)
 
 
 ###### It looks like when more avocados are sold, prices go down. However, this doesn't mean that fewer sales causes higher prices - we can only tell that they're correlated with each other.
@@ -1603,7 +1603,7 @@ plt.show()
 ```
 
 
-![png](output_100_0.png)
+![output_100_0](https://user-images.githubusercontent.com/49030506/78165091-cddbe980-7418-11ea-99fd-7e75346c8a36.png)
 
 
 
@@ -1622,7 +1622,7 @@ plt.show()
 ```
 
 
-![png](output_101_0.png)
+![output_101_0](https://user-images.githubusercontent.com/49030506/78165093-cddbe980-7418-11ea-947a-3235d47047d8.png)
 
 
 
@@ -1641,7 +1641,7 @@ plt.show()
 ```
 
 
-![png](output_102_0.png)
+![output_102_0](https://user-images.githubusercontent.com/49030506/78165096-cddbe980-7418-11ea-82fb-823e5668f87a.png)
 
 
 ###### We can see that on average, organic avocados are more expensive than conventional ones, but their price distributions have some overlap.
@@ -1693,7 +1693,7 @@ plt.show()
 
 
 
-![png](output_105_1.png)
+![output_105_1](https://user-images.githubusercontent.com/49030506/78165097-ce748000-7418-11ea-8d25-7a6fd9bda506.png)
 
 
 ###### Above results indicate there is no missing value.

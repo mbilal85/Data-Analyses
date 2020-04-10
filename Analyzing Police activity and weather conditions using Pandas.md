@@ -1,12 +1,12 @@
 ### Analyzing Police activity and weather conditions using Pandas
 ###### This is one of my pieces of work towards my endeavour to learn Pandas. It encompases a wide range of functions used in Pandas. 
-###### Below analysis gives an in depth information on Police activity in different states of the US. The results can be used to find out the range of road violations taking place in different places at different times and during different weather. 
-###### The results can be used by police develop strategies to reduce violations. 
+###### Below analysis gives an in depth information on Police activity in different states of the US. The results can be used to find out the range of road violations taking place in different places at different times and during different weather conditions. 
+###### The results can be used by police to develop strategies to reduce violations. 
 ###### Data is studied from various angles, taking into consideration whole dataset as one unit, analyzing variables individually and relationship between different variables. 
-###### Data is distributed row wise, column wise to find interesting insights and to make inferences. 
+###### Data is distributed row wise and column wise to find interesting insights and to make inferences. 
 ###### Different data frames are also merged to conduct a more comprehensive analysis.
-###### Pandas is a great tool for data pre-processing which is the most important aspect of data analysis. 
-###### Among other the Pandas skills I am learning will definitely help me to analyze data for different sectors. 
+###### Pandas is a great tool for data pre-processing which is the most important aspect of data analysis. Working on this document helped me to learn a great deal of functions and tools and I can leverage that learning to datasets pertaining to any sector.  
+###### Among other things, Pandas skills I am learning will definitely help me to analyze data for different sectors. 
 
 
 ```python

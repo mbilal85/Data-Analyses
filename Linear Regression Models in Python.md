@@ -694,7 +694,7 @@ plt.show()
 ```
 
 
-![png](output_47_0.png)
+![output_47_0](https://user-images.githubusercontent.com/49030506/80290193-d79ff680-8711-11ea-9c75-01ed8007ce9c.png)
 
 
 I have plotted training data and added a logistic regression fit to it. 
@@ -970,7 +970,8 @@ plt.show()
 ```
 
 
-![png](output_60_0.png)
+![output_60_0](https://user-images.githubusercontent.com/49030506/80290195-da025080-8711-11ea-9813-7d567bfb68cd.png)
+
 
 
 Visualizing the response variable there is apparent skewness of the distribution.
@@ -1335,7 +1336,8 @@ plt.show()
 ```
 
 
-![png](output_91_0.png)
+![output_91_0](https://user-images.githubusercontent.com/49030506/80290197-dc64aa80-8711-11ea-9947-d0efd83d42e2.png)
+
 
 
 Let's see how this fit compares to the Poisson regression model.
@@ -1368,7 +1370,8 @@ plt.show()
 ```
 
 
-![png](output_95_0.png)
+![output_95_0](https://user-images.githubusercontent.com/49030506/80290198-df5f9b00-8711-11ea-9a03-6ac158d29f98.png)
+
 
 
 We can compare both fits on one graph! Similary as for the model with weight variable the linear and Poisson fits are close in the mid range of width values, but diverge on smaller and larger values.
